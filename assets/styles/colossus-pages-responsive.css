@@ -1,0 +1,121 @@
+/* Layout mobile-first: coluna com rolagem */
+.page-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.texto-principal {
+  margin-bottom: 1.5rem;
+}
+
+.texto-principal h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.texto-principal p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Carrossel */
+.carousel-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+  justify-content: center;
+  width: 100%;
+}
+
+.carousel-item {
+  width: 45vw; /* REDUZIDO para 50% do que era antes (antes era ~90vw) */
+  max-width: 200px; /* REDUZIDO também */
+  padding: 0.5rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Texto do item */
+.carousel-item h2 {
+  font-size: 1rem;
+  margin: 0.5rem 0 0.3rem;
+}
+
+.carousel-item p {
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+/* Botões */
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.carousel-buttons button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: #444;
+  color: white;
+  border-radius: 4px;
+}
+
+.carousel-buttons button:hover {
+  background-color: #666;
+}
+
+/* Telas maiores */
+@media screen and (min-width: 768px) {
+  .page-content {
+    flex-direction: row;
+    max-width: 1000px;
+    align-items: flex-start;
+  }
+
+  .texto-principal {
+    flex: 1;
+    margin-right: 2rem;
+  }
+
+  .carousel-container {
+    flex: 1;
+    align-items: flex-start;
+  }
+
+  .carousel {
+    justify-content: flex-start;
+  }
+
+  .carousel-item {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .carousel-buttons {
+    justify-content: flex-start;
+    margin-top: 1rem;
+  }
+}

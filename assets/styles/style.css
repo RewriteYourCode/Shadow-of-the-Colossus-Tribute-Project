@@ -1,0 +1,247 @@
+/* =================== VARIÁVEIS GLOBAIS =================== */
+:root {
+  /* Backgrounds */
+  --background-theme: url('../images/background.jpg');
+  --background-intro-screen: rgba(0, 0, 0, 0.75);
+  --background-all-buttons: rgba(40, 30, 20, 0.6);
+  --background-all-buttons-hover: rgba(80, 45, 30, 0.8);
+
+  /* Fontes */
+  --font-family-theme: 'IM Fell English SC', serif;
+  --title-font-size: 4.5rem;
+  --subtitle-font-size: 2rem;
+  --credit-font-size: 1rem;
+
+  /* Cores principais */
+  --color-theme: rgba(168, 143, 90, 1);
+
+  /* Sombreamentos */
+  --text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+  --body-text-shadow: 1px 1px 3px rgba(17, 26, 22, 0.7);
+  --intro-button-shadow: 0 0 12px rgba(0, 0, 0, 0.85);
+  --intro-box-shadow: 0 0 16px rgba(255, 215, 100, 0.3);
+  --colossus-gallery: 0 4px 25px rgba(0, 0, 0, 0.5);
+
+  /* Botões */
+  --intro-button-border: 1px solid rgba(255, 255, 255, 0.2);
+  --intro-button-border-radius: 5px;
+  --intro-button-padding-top: 0.8rem;
+  --intro-button-padding-bottom: 0.6rem;
+  --intro-button-padding-inline: 1.5rem;
+
+  /* Scrollbar */
+  --scrollbar-thumb: rgba(168, 143, 90, 0.6);
+  --scrollbar-thumb-hover: rgba(168, 143, 90, 0.9);
+}
+
+/* =================== BODY =================== */
+body {
+  background: var(--background-theme) no-repeat center center fixed;
+  background-size: cover;
+  font-family: var(--font-family-theme);
+  color: var(--color-theme);
+  text-shadow: var(--body-text-shadow);
+  height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* =================== INTRODUÇÃO =================== */
+#intro-screen.fade-transition {  /* antigo: (#intro-screen.transition-fade) renomeado ok! */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: var(--background-intro-screen);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-theme);
+  text-shadow: var(--text-shadow);
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+#intro-screen.fade-out-transition { /* antigo: (#intro-screen.transition-fade-out) renomeado ok! */
+  opacity: 0;
+  pointer-events: none;
+}
+
+#intro-screen.fade-transition h1 { /* antigo: (#intro-screen.transition-fade h1) renomeado ok! */
+  font-size: var(--title-font-size);
+  margin-top: 8rem;
+}
+
+#intro-screen.fade-transition h2 { /* antigo: (#intro-screen.transition-fade h2) renomeado ok! */
+  font-size: var(--subtitle-font-size);
+  margin-top: -1.5rem;
+}
+
+#intro-screen.fade-transition .intro-credits { /* antigo: (#intro-screen.transition-fade .intro-footer) renomeado ok! */
+  font-size: var(--credit-font-size);
+  opacity: 0.6;
+  margin-top: 15rem;
+}
+
+#intro-screen button {
+  margin-top: 2.5rem;
+  background: var(--background-all-buttons);
+  color: var(--color-theme);
+  border: var(--intro-button-border);
+  box-shadow: var(--intro-button-shadow);
+  border-radius: var(--intro-button-border-radius);
+  padding: var(--intro-button-padding-top) var(--intro-button-padding-inline) var(--intro-button-padding-bottom);
+  font-size: var(--credit-font-size);
+  font-family: var(--font-family-theme);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#intro-screen button:hover {
+  background: var(--background-all-buttons-hover);
+  box-shadow: var(--intro-box-shadow);
+}
+
+/* =================== CONTEÚDO PRINCIPAL =================== */
+#main-content {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 1.5s ease, transform 0.5s ease;
+  padding: 2rem;
+  text-align: center;
+  color: var(--color-theme);
+  text-shadow: var(--text-shadow);
+}
+
+#main-content.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  animation: softDrop 2.5s ease-out forwards;
+}
+
+#main-content h1 {
+  font-size: var(--title-font-size);
+  margin-top: 3rem;
+}
+
+#main-content h2 {
+  font-size: var(--subtitle-font-size);
+  margin-top: -1.5rem;
+}
+
+/* =================== NAVEGAÇÃO =================== */
+.main-menu button { /* antigo: (.navigation-buttons button) renomeado ok! */
+  background: var(--background-all-buttons);
+  color: var(--color-theme);
+  border: none;
+  border-radius: 5px;
+  padding: var(--intro-button-padding-top) var(--intro-button-padding-inline) var(--intro-button-padding-bottom);
+  font-size: var(--credit-font-size);
+  font-family: var(--font-family-theme);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(177, 188, 166, 0.5);
+  margin: 3rem 0.5rem 0;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.27);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+/* =================== GALERIA =================== */
+.colossus-gallery {
+  width: 100%;
+  max-width: 90vw;
+  overflow-x: auto;
+  margin: 4rem auto 2rem;
+  border-radius: 10px;
+  scroll-behavior: smooth;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.colossus-gallery:active {
+  box-shadow: var(--colossus-gallery);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.colossus-gallery-track { /* antigo: (gallery-track) renomeado ok! */
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: max-content;
+  padding-bottom: 1rem;
+}
+
+/* =================== CARTÕES =================== */
+.colossus-thumbnail { /* antigo: (.colossus-image-container) renomeado ok */
+  position: relative;
+  width: 320px;
+  aspect-ratio: 16 / 9;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid var(--color-theme);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.colossus-thumbnail:hover { /* antigo: (.colossus-image-container:hover) renomeado ok! */
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.colossus-thumbnail img { /* antigo: (.colossus-image-container img) renomeado ok! */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
+
+.colossus-thumbnail:hover img { /* antigo: (.colossus-image-container:hover) renomeado ok! */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* =================== SCROLLBAR =================== */
+.colossus-gallery::-webkit-scrollbar {
+  height: 8px;
+}
+
+.colossus-gallery::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.colossus-gallery::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.colossus-gallery::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* =================== ÁUDIO =================== */
+#audio-controller { /* antigo: (#audio-controls) renomeado ok! */
+  display: none;
+}
+
+/* =================== ANIMAÇÕES =================== */
+@keyframes softDrop {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

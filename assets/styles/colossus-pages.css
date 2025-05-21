@@ -1,0 +1,261 @@
+/* CONFIGURAÇÕES PRINCIPAIS */
+:root {
+  --primary-font: 'IM Fell English SC', serif;
+  --bg-color: black;
+  --text-color: #a88f5a;
+  --overlay-bg: rgba(0, 0, 0, 0.6);
+  --highlight-color: rgba(168, 143, 90, 0.6);
+  --hover-bg: rgba(255, 255, 255, 0.2);
+  --button-bg: rgba(40, 30, 20, 0.7);
+  --button-hover-bg: rgba(255, 255, 255, 0.2);
+  --button-shadow: 0 4px 10px rgba(177, 188, 166, 0.5);
+  --button-padding: 10px 20px;
+  --title-font-size: 1.2rem;
+  --description-font-size: 1rem;
+  --description-max-width: 740px;
+  --image-border-radius: 8px;
+  --image-shadow: 0 4px 20px rgba(255, 255, 255, 0.08);
+  --carousel-padding: 0 0 1rem;
+  --carousel-gap: 1rem;
+  --image-wrapper-width: 320px;
+  --image-wrapper-aspect: 16 / 9;
+  --carousel-mask: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  --scrollbar-color: rgba(168, 143, 90, 0.6);
+}
+
+/* CONFIGURAÇÃO GERAL */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: var(--primary-font);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+/* PÁGINA COLOSSUS */
+.colossus-pages { /* antigo ".colossus-page" renomeado ok! */
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem 1rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.colossus-pages::before { /* antigo ".colossus-page" renomeado ok! */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('URL_DA_IMAGEM') no-repeat center center / cover;
+  opacity: 0.3;
+  z-index: -2;
+}
+
+.colossus-pages::after { /* antigo ".colossus-page" renomeado ok! */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-bg);
+  z-index: -1;
+}
+
+/* TÍTULOS */
+#pages-title { /* antigo "#colossus-title" renomeado ok! */
+  font-size: var(--title-font-size);
+  text-shadow: 1px 1px 3px rgba(17, 26, 22, 0.7);
+}
+
+#pages-description { /* antigo "#colossus-description" renomeado ok! */
+  font-size: var(--description-font-size);
+  line-height: 1.2;
+  height: 200px;
+  max-width: var(--description-max-width);
+  text-shadow: 1px 1px 3px rgba(17, 26, 22, 0.7);
+  margin-bottom: 0.5rem;
+}
+
+/* BOTÃO VOLTAR */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+  padding: var(--button-padding);
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-shadow: 1px 1px 3px rgba(17, 26, 22, 0.7);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+  background: var(--hover-bg);
+  transform: scale(1.05);
+}
+
+/* CARROSSEL */
+.colosso-gallery { /* antigo ".carousel-container" renomeado ok!*/
+  width: 100%;
+  padding: var(--carousel-padding);
+  display: flex;
+  justify-content: center;
+  margin-top: auto; /* posiciona mais abaixo da tela */
+  margin-bottom: 2rem; /* aproxima dos botões */
+}
+
+.colosso-gallery-track { /* (antigo ".carousel-track-container" renomeado ok! */
+  width: 90%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+  mask-image: var(--carousel-mask);
+  -webkit-mask-image: var(--carousel-mask);
+}
+
+.colosso-thumbnail { /* antigo ".carousel-track"' renomeado ok! */
+  display: flex;
+  gap: var(--carousel-gap);
+  list-style: none;
+}
+
+.image-wrapper {
+  flex-shrink: 0;
+  width: var(--image-wrapper-width);
+  aspect-ratio: var(--image-wrapper-aspect);
+  overflow: hidden;
+  border-radius: var(--image-border-radius);
+  border: 2px solid var(--text-color);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: var(--image-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-wrapper img { /* Usado no carrossel criado dinamicamente via Colossus.js */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--image-border-radius);
+}
+
+.image-wrapper:hover {  /* Usado no carrossel criado dinamicamente via Colossus.js */
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.image-wrapper:hover img { /* Usado no carrossel criado dinamicamente via Colossus.js */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* SCROLLBAR PERSONALIZADA */
+.colosso-gallery-track::-webkit-scrollbar { /* (antigo ".carousel-track-container" renomeado ok! */
+  height: 8px;
+}
+
+.colosso-gallery-track::-webkit-scrollbar-track { /* (antigo ".carousel-track-container" renomeado ok! */
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.colosso-gallery-track::-webkit-scrollbar-thumb { /* (antigo ".carousel-track-container" renomeado ok! */
+  background: var(--scrollbar-color);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.colosso-gallery-track::-webkit-scrollbar-thumb:hover { /* (antigo ".carousel-track-container" renomeado ok! */
+  background: rgba(168, 143, 90, 0.9);
+}
+
+/* BOTÕES FIXOS NO RODAPÉ */
+.main-menu { /*antigo ".buttons-container" renomeado ok! */
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.main-buttons { /* antigo 'class="nav-buttons"' renomeado ok! */
+  display: flex;
+  gap: 1rem;
+}
+
+.main-buttons button, /* antigo 'class="nav-buttons"' renomeado ok! */
+#play-button {
+  background: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-shadow: 1px 1px 3px rgba(17, 26, 22, 0.7);
+  box-shadow: var(--button-shadow);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.main-buttons button:hover, /* antigo 'class="nav-buttons"' renomeado ok! */
+#play-button:hover {
+  background: var(--hover-bg);
+  transform: scale(1.05);
+}
+
+/* AMPLIAÇÃO DE IMAGEM */
+.image-overlay { /* Usado no carrossel criado dinamicamente via Colossus.js */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-overlay.active { /* Usado no carrossel criado dinamicamente via Colossus.js */
+  visibility: visible;
+  opacity: 1;
+}
+
+.image-overlay img { /* Usado no carrossel criado dinamicamente via Colossus.js */
+  max-width: 85vw;
+  max-height: 85vh;
+  border-radius: var(--image-border-radius);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+  border: 2px solid var(--text-color);
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.image-overlay img:hover { /* Usado no carrossel criado dinamicamente via Colossus.js */
+  transform: scale(1.02);
+}
+
+.image-overlay::after { /* Usado no carrossel criado dinamicamente via Colossus.js */
+  content: 'Clique para fechar';
+  position: absolute;
+  bottom: 20px;
+  color: #ccc;
+  font-size: 0.9rem;
+  font-family: var(--primary-font);
+  text-shadow: 1px 1px 3px black;
+}

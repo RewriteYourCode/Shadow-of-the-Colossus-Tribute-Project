@@ -1,0 +1,118 @@
+/* reset.css - Reset Moderno Comentado */
+/* Objetivo: padronizar estilos entre navegadores e preparar uma base limpa e consistente para projetos web modernos */
+
+/* Aplica box-sizing: border-box para todos os elementos e pseudoelementos */
+*, *::before, *::after {
+  box-sizing: border-box; /* Inclui padding e borda dentro do tamanho total do elemento */
+  margin: 0;              /* Remove margens padrão */
+  padding: 0;             /* Remove espaçamentos internos padrão */
+}
+
+/* Define configurações básicas de layout e tipografia para html e body */
+html, body {
+  height: 100%;                             /* Garante que ocupem toda a altura da tela */
+  width: 100%;                              /* Ocupam toda a largura da tela */
+  font-family: 'IM Fell English SC', serif; /* Fonte serifada personalizada */
+  line-height: 1.5;                         /* Melhora legibilidade do texto */
+  -webkit-font-smoothing: antialiased;      /* Suaviza fontes no Chrome/Safari */
+  -moz-osx-font-smoothing: grayscale;       /* Suaviza fontes no Firefox/Mac */
+}
+
+/* Define aparência base do corpo */
+body {
+  background-color: #000;  /* Fundo escuro (modo dark) */
+  color: #fff;             /* Texto branco */
+  font-size: 16px;         /* Tamanho base da fonte */
+}
+
+/* Estiliza elementos de mídia para serem responsivos */
+img, picture, video, canvas, svg {
+  display: block;       /* Evita espaços extras abaixo do elemento */
+  max-width: 100%;      /* Impede que ultrapassem o contêiner */
+  height: auto;         /* Mantém proporção */
+}
+
+/* Remove estilos padrão de formulários e aplica herança de fonte */
+button, input, select, textarea {
+  font: inherit;       /* Herda todas as propriedades de fonte */
+  background: none;    /* Remove fundo */
+  border: none;        /* Remove bordas */
+  outline: none;       /* Remove borda de foco (acessibilidade deve ser considerada em projetos reais) */
+  color: inherit;      /* Herda cor do texto */
+}
+
+/* Estilo específico para botões */
+button {
+  cursor: pointer;     /* Mostra ponteiro de clique */
+}
+
+/* Remove sublinhado e cor padrão de links */
+a {
+  text-decoration: none; /* Remove sublinhado */
+  color: inherit;        /* Herda a cor do texto ao redor */
+}
+
+/* Remove marcadores de listas */
+ul, ol {
+  list-style: none;
+}
+
+/* Remove estilos padrões de títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;  /* Remove negrito padrão */
+  font-size: inherit;   /* Usa o tamanho de fonte do elemento pai */
+}
+
+/* Remove espaçamentos padrão de tabelas */
+table {
+  border-collapse: collapse; /* Junta bordas das células */
+  border-spacing: 0;         /* Remove espaços entre células */
+}
+
+/* Remove estilo padrão de destaque (pode ser ajustado conforme a necessidade de acessibilidade) */
+:focus {
+  outline: none;
+}
+
+/* Estilo neutro para <strong> e <em> */
+strong, em {
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* 
+----------------------------------------------------------------------
+COMENTÁRIOS COMPLEMENTARES LINHA A LINHA - reset.css
+----------------------------------------------------------------------
+
+1-3: A aplicação do box-sizing: border-box em todos os elementos e pseudoelementos evita surpresas no cálculo do tamanho total de caixas, tornando o layout mais previsível.
+
+4-6: margin e padding zerados garantem que nenhum navegador aplique espaçamentos inesperados. É o coração de qualquer reset.
+
+8-14: O uso de 100% na altura e largura do html e body permite que o layout use a tela inteira. A família tipográfica personalizada dá identidade ao projeto. A suavização de fontes melhora a aparência em diferentes sistemas operacionais.
+
+16-19: A definição de background escuro com texto claro prepara o site para modo dark, já integrado ao reset. O tamanho de fonte base (16px) é um padrão de legibilidade.
+
+21-25: O display: block em elementos de mídia evita quebras de layout causadas por espaços extras. max-width e height: auto tornam imagens e vídeos responsivos por padrão.
+
+27-32: Os estilos para campos de formulário garantem consistência visual e tipográfica. outline: none elimina a borda de foco, mas deve ser reimplementada com acessibilidade em mente (ex: via :focus-visible).
+
+34: cursor: pointer nos botões deixa a interação mais clara ao usuário. Sem isso, botões podem parecer inativos.
+
+36-39: Links herdam cor e perdem sublinhado, o que exige atenção ao contraste e acessibilidade. Reaplicar estilos visuais pode ser necessário em certos projetos.
+
+41-43: ul e ol sem list-style removem bolinhas e números. Ideal para listas estilizadas com ícones ou personalizados com CSS.
+
+45-48: Títulos deixam de ser automaticamente maiores e mais pesados. Isso força o designer a definir estilos conscientemente, garantindo coesão visual.
+
+50-52: Tabelas têm seu espaçamento interno e entre células removido. Isso evita layouts quebrados e facilita a aplicação de estilos próprios.
+
+54: outline: none em :focus remove o contorno de foco, o que pode prejudicar a navegação por teclado. Recomenda-se usar :focus-visible em produção.
+
+56-57: A padronização de strong e em retira negrito e itálico padrão, exigindo estilo explícito no design. Útil para projetos com hierarquia visual própria.
+
+----------------------------------------------------------------------
+Esses comentários são voltados para aprendizado, revisão e manutenção.
+Eles ajudam a entender o "porquê" por trás de cada linha do reset.css.
+----------------------------------------------------------------------
+*/

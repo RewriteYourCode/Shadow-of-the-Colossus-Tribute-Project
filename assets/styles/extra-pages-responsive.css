@@ -1,0 +1,84 @@
+@media (max-width: 768px) {
+  /* Container principal */
+  .extra-page-wrapper {
+    padding: 1.2rem;
+    height: auto;
+  }
+
+  /* Ajuste da área principal */
+  .extra-main-content {
+    flex-direction: column;
+    height: auto;
+    gap: 2rem;
+  }
+
+  /* Coluna de texto ocupa 100% */
+  .text-content-block {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  .text-content-block h1 {
+    font-size: 1.2rem;
+  }
+
+  .text-content-block p {
+    font-size: 0.9rem;
+  }
+
+  /* Wrapper das colunas de imagem */
+  .image-columns-wrapper {
+    width: 100%;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  /* Cada coluna ocupa 50% */
+  .image-column {
+    width: 48%;
+    gap: 0.8rem;
+  }
+
+  /* Imagens menores e mais ajustadas */
+  .image-column img {
+    border-width: 1px;
+  }
+
+  /* Botões posicionados no centro inferior */
+  .navigation-buttons {
+    position: static;
+    margin-top: 2rem;
+    justify-content: center;
+  }
+
+  .navigation-buttons button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-columns-wrapper {
+    flex-direction: column;
+  }
+
+  .image-column {
+    width: 100%;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .text-content-block h1 {
+    font-size: 1rem;
+  }
+
+  .text-content-block p {
+    font-size: 0.8rem;
+  }
+
+  .navigation-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

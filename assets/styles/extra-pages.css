@@ -1,0 +1,151 @@
+/* Variáveis globais */
+:root {
+  /* Background */
+  --background-intro-screen: rgba(0, 0, 0, 0.75);
+  --background-all-buttons: rgba(40, 30, 20, 0.6);
+  --background-all-buttons-hover: rgba(80, 45, 30, 0.8);
+
+  /* Fontes */
+  --font-family-theme: 'IM Fell English SC', serif;
+  --title-font-size: 1rem;
+  --subtitle-font-size: 0.8rem;
+  --credit-font-size: 1rem;
+
+  /* Cores principais */
+  --color-theme: rgba(168, 143, 90, 1);
+
+  /* Shadows */
+  --text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+  --body-text-shadow: 1px 1px 3px rgba(17, 26, 22, 0.7);
+
+  /* Bordas dos botões */
+  --intro-button-border: 1px solid rgba(255, 255, 255, 0.2);
+  --intro-button-border-radius: 5px;
+
+  /* Espaçamento dos botões */
+  --intro-button-padding-top: 0.6rem;
+  --intro-button-padding-bottom: 0.5rem;
+  --intro-button-padding-inline: 1.2rem;
+
+}
+
+/* Estilo geral da página */
+body {
+  font-family: var(--font-family-theme);
+  color: var(--color-theme);
+  text-shadow: var(--body-text-shadow);
+  height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container principal */
+.extra-page-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Imagem de fundo */
+.background-image-dynamic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* Área do conteúdo (90% de altura) */
+.extra-main-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90%;
+  box-sizing: border-box;
+}
+
+/* Coluna de texto (55%) */
+.text-content-block {
+  width: 55%;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Título e parágrafo */
+.text-content-block h1 {
+  font-size: var(--title-font-size);
+  margin-bottom: 1rem;
+}
+.text-content-block p {
+  font-size: var(--subtitle-font-size);
+  margin: 0;
+}
+
+/* Wrapper das duas colunas de imagem */
+.image-columns-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  gap: 4%;
+}
+
+/* Cada coluna de imagem (18%) */
+.image-column {
+  width: 48%;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+/* Estilo das imagens */
+.image-column img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 2px solid var(--color-theme);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.image-column img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Botões (10% da altura) */
+.navigation-buttons {
+  position: absolute;
+  left: 115px;
+  bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  z-index: 10;
+}
+
+.navigation-buttons button {
+  background: var(--background-all-buttons);
+  color: var(--color-theme);
+  border: var(--intro-button-border);
+  border-radius: var(--intro-button-border-radius);
+  padding: var(--intro-button-padding-top) var(--intro-button-padding-inline);
+  font-size: var(--credit-font-size);
+  font-family: var(--font-family-theme);
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 3px 10px rgba(177, 188, 166, 0.4);
+}
+.navigation-buttons button:hover {
+  background: var(--background-all-buttons-hover);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.5);
+}
