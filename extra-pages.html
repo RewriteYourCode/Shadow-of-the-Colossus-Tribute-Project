@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Extra Pages - Shadow of the Colossus Tribute</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Página extra do projeto tribute de Shadow of the Colossus. Conteúdo complementar sobre o universo de Fumito Ueda." />
+  <meta name="author" content="RewriteYourCode™" />
+
+  <!-- Favicon e fontes -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/styles/reset.css" /> <!-- antigo "./src/css/reset.css" renomeado ok! -->
+  <link rel="stylesheet" href="./assets/styles/extra-pages.css" /> <!-- antigo "./src/css/extra-pages.css" renomeado ok! -->
+  <link rel="stylesheet" href="./assets/styles/extra-pages-responsive.css" /> <!-- antigo "./src/css/responsive.css" renomeado ok! -->
+</head>
+
+<body>
+  <div id="extra-page-root" class="extra-page-wrapper"> <!-- antigo "id=extra-page" "class=extra-page-container" renomeado ok! -->
+    
+    <!-- Imagem de fundo dinâmica (decorativa) -->
+    <div id="background-cover" class="background-image-dynamic" aria-hidden="true"></div> <!-- antigo 'id="background-image" class="background-image"' -->
+
+    <!-- Conteúdo principal -->
+    <main class="extra-main-content"> <!-- antigo "<div>" e 'class="extra-content"' renomeado ok! -->
+      <section class="text-content-block"> <!-- antigo "<div>" e 'class="text-column"' renomeado ok! -->
+        <h1 id="extra-heading">Título carregando...</h1> <!-- antigo 'id="extra-title"' renomeado ok! -->
+        <p id="extra-description">Texto carregando...</p><!-- antigo 'id="extra-text"' renomeado ok! -->
+      </section>
+
+      <section class="image-columns-wrapper" aria-label="Galeria de imagens"> <!-- antigo <div> renomeado ok! -->
+        <!-- Coluna 1 de imagens -->
+        <div class="image-column" id="image-column-left"></div> <!-- antigo 'id="image-column-1"' renomeado ok! -->
+
+        <!-- Coluna 2 de imagens -->
+        <div class="image-column" id="image-column-right"></div> <!-- antigo 'id="image-column-2"' renomeado ok! -->
+      </section>
+    </main>
+    
+    <!-- Navegação -->
+    <nav class="navigation-buttons" aria-label="Navegação da página extra">
+      <button id="back-button" data-label="Voltar">VOLTAR</button>
+      <button id="prev-button" data-label="Anterior">ANTERIOR</button>
+      <button id="play-button" data-label="Play">PLAY</button>
+      <button id="next-button" data-label="Próximo">PRÓXIMO</button>
+    </nav>
+
+    <!-- Áudios -->
+    <audio id="ui-sound-clicks" src="./assets/audio/ui/click-all-buttons.mp3" preload="auto"></audio> <!-- antigo "id=click-sound" "./src/audio/click-all-buttons.mp3" renomeado ok! -->
+    <audio id="extra-pages-theme" preload="auto" loop></audio> <!-- antigo "page-theme-audio" renomeado ok! -->
+  </div>
+
+  <!-- JS -->
+  <script src="./assets/scripts/extra-pages-data.js" defer></script> <!-- antigo "./src/js/extraDataPages.js" renomeado ok! -->
+  <script src="./assets/scripts/extra-pages.js" defer></script> <!-- antigo "./src/js/extra-pages.js" renomeado ok! -->
+</body>
+</html>
