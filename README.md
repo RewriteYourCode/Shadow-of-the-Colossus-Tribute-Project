@@ -1,7 +1,3 @@
-Claro! Aqui está uma versão melhorada e mais fluida da descrição do projeto, com ajustes na linguagem e organização para deixá-la mais profissional, clara e atrativa:
-
-
----
 
 Shadow of the Colossus – Tributo Interativo
 
@@ -201,18 +197,3 @@ Aviso Legal
 
 Este projeto é uma obra de fã, sem fins lucrativos.
 Todos os direitos relacionados a Shadow of the Colossus pertencem à Sony Interactive Entertainment e ao Japan Studio / Team ICO.
-
-
----
-
-Se quiser, posso gerar as versões:
-
-[ ] README em inglês
-
-[ ] LICENSE.md com a licença MIT completa
-
-[ ] index.html com navegação interativa entre os colossos
-
-
-Deseja que eu prepare alguma dessas agora?
-
