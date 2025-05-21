@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+<head>
+  <!-- Metadados essenciais -->
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Shadow of the Colossus - Tribute Project</title> 
+  
+  <!-- SEO Básico -->
+  <meta name="description" content="Tributo ao clássico Shadow of the Colossus. Um projeto dedicado à obra-prima de Fumito Ueda. Explore os colossos, a história e os jogos relacionados."> 
+  <meta name="keywords" content="Shadow of the Colossus, Fumito Ueda, The Last Guardian, ICO, Tribute Project, Wander, Agro, Colossus, Playstation, Games, Arte Digital"> 
+  <meta name="author" content="RewriteYourCode™"> 
+  <meta name="robots" content="index, follow">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  
+  <!-- Fontes externas -->
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet"> 
+  
+  <!-- Estilos CSS (Reset + Principal -->
+  <link rel="stylesheet" href="./assets/styles/reset.css"> <!-- antigo: "./src/css/reset.css" renomeado ok!-->
+  <link rel="stylesheet" href="./assets/styles/style.css"> <!-- antigo: "./src/css/style.css" renomeado ok!-->
+  <link rel="stylesheet" href="./assets/styles/responsive.css"> <!-- antigo: "./src/css/responsive" renomeado ok!-->
+  
+</head>
+
+<body> 
+  <!-- INTRODUÇÃO: Tela inicial com botão de entrada -->
+  <div id="intro-screen" class="fade-transition"> <!-- antigo: (id="intro-screen" class="transition-fade") renomeado ok! -->
+    <h1>Shadow of the Colossus</h1> 
+    <h2>TRIBUTE PROJECT</h2>
+    <button id="enter-button" data-label="Entrar no site">ENTRAR</button> <!-- antigo: ("id="intro-enter-button") renomeado ok -->
+    <p class="intro-credits">© 2025 Tribute Project. All rights reserved. Developed by RewriteYourCode™.</p> <!-- antigo: (class="intro-footer") renomeado ok -->
+  </div>
+  
+  <!-- CONTEÚDO PRINCIPAL: Menu e navegação do site -->
+  <main id="main-content" class="visually-hidden fade-transition"> <!-- antigo: ("visually-hidden transition-fade") renomeado ok! -->
+    <header> 
+      <h1>Shadow of the Colossus</h1>
+      <h2>TRIBUTE PROJECT</h2>
+    </header>
+    
+    <!-- CARROSSEL DE IMAGENS: Galeria dos 16 colossos -->
+    <section class="colossus-gallery">
+      <div class="colossus-gallery-track"> <!-- antigo: (class="gallery-track") -->
+        <!-- As imagens são organizadas em divs com "data-colossus-id" para facilitar scripts -->
+        
+        <!-- antigo: (class="colossus-image-container" e "data-colossus" e src="./src/images/colossus/1valus1.jpg") renomeado ok!-->
+        <div class="colossus-thumbnail" data-colossus-id="1"><img src="./assets/images/colossus-main-gallery/colosso-01-valus.jpg" alt="Colossus 1 - Valus" loading="lazy"></div>
+        <div class="colossus-thumbnail" data-colossus-id="2"><img src="./assets/images/colossus-main-gallery/colosso-02-quadratus.jpg" alt="Colossus 2 - Quadratus" loading="lazy"></div>
+        <div class="colossus-thumbnail" data-colossus-id="3"><img src="./assets/images/colossus-main-gallery/colosso-03-gaius.jpg" alt="Colossus 3 - Gaius" loading="lazy"></div>
+        <div class="colossus-thumbnail" data-colossus-id="4"><img src="./assets/images/colossus-main-gallery/colosso-04-phaedra.jpg" alt="Colossus 4 - Phaedra" loading="lazy"></div>
+        <div class="colossus-thumbnail" data-colossus-id="5"><img src="./assets/images/colossus-main-gallery/colosso-05-avion.jpg" alt="Colossus 5 - Avion" loading="lazy"></div>
+        <div class="colossus-thumbnail" data-colossus-id="6"><img src="./assets/images/colossus-main-gallery/colosso-06-barba.jpg" alt="Colossus 6 - Barba" loading="lazy"></div>
+        <div class="colossus-thumbnail" data-colossus-id="7"><img src="./assets/images/colossus-main-gallery/colosso-07-hydrus.jpg" alt="Colossus 7 - Hydrus" loading="lazy"></div>
+        <div class="colossus-thumbnail" data-colossus-id="8"><img src="./assets/images/colossus-main-gallery/colosso-08-kuromori.jpg" alt="Colossus 8 - Kuromori" loading="lazy"></div>
+        <div class="colossus-thumbnail" data-colossus-id="9"><img src="./assets/images/colossus-main-gallery/colosso-09-basaran.jpg" alt="Colossus 9 - Basaran" loading="lazy"></div>
+        <div class="colossus-thumbnail" data-colossus-id="10"><img src="./assets/images/colossus-main-gallery/colosso-10-dirge.jpg" alt="Colossus 10 - Dirge" loading="lazy"></div>
+        <div class="colossus-thumbnail" data-colossus-id="11"><img src="./assets/images/colossus-main-gallery/colosso-11-celosia.jpg" alt="Colossus 11 - Celosia" loading="lazy"></div>
+        <div class="colossus-thumbnail" data-colossus-id="12"><img src="./assets/images/colossus-main-gallery/colosso-12-pelagia.jpg" alt="Colossus 12 - Pelagia" loading="lazy"></div>
+        <div class="colossus-thumbnail" data-colossus-id="13"><img src="./assets/images/colossus-main-gallery/colosso-13-phalanx.jpg" alt="Colossus 13 - Phanlanx" loading="lazy"></div>
+        <div class="colossus-thumbnail" data-colossus-id="14"><img src="./assets/images/colossus-main-gallery/colosso-14-cenobia.jpg" alt="Colossus 14 - Cenobia" loading="lazy"></div>
+        <div class="colossus-thumbnail" data-colossus-id="15"><img src="./assets/images/colossus-main-gallery/colosso-15-argus.jpg" alt="Colossus 15 - Argus" loading="lazy"></div>
+        <div class="colossus-thumbnail" data-colossus-id="16"><img src="./assets/images/colossus-main-gallery/colosso-16-malus.jpg" alt="Colossus 16 - Malus" loading="lazy"></div>
+      </div>
+    </section>
+    
+    <!-- NAVEGAÇÃO PRINCIPAL: Botões de acesso às pàginas internas -->
+    <nav class="main-menu"> <!-- antigo: (class="navigation-buttons" e "data=href")renomeado ok! -->
+      <button data-target-url="extra-pages.html?id=1" aria-label="The Last Guardian">THE LAST GUARDIAN</button>
+      <button data-target-url="extra-pages.html?id=2" aria-label="ICO">ICO</button>
+      <button data-target-url="extra-pages.html?id=3" aria-label="Fumito Ueda">FUMITO UEDA</button>
+      <button data-target-url="extra-pages.html?id=4" aria-label="Next Game">NEXT GAME</button>
+      <button data-target-url="extra-pages.html?id=5" aria-label="Rewrite Your Code">REWRITE YOUR CODE</button>
+      <button data-target-url="index.html" aria-label="Back">BACK</button>
+    </nav>
+  </main>
+  
+  <!-- CONTROLE DE ÀUDIO: Sons de interação e música de fundo -->
+  <!-- antigo: "./src/audio" renomeado ok! -->
+  <div id="audio-controller" class="visually-hidden"> <!-- antigo: (id="audio-controls") renomeado ok! -->
+    <audio id="sound-enter" src="./assets/audio/ui/click-enter-button.mp3" preload="auto"></audio> <!-- antigo: (id="enter-button-sound") renomeado ok!-->
+    <audio id="sound-clicks" src="./assets/audio/ui/click-all-buttons.mp3" preload="auto"></audio> <!-- antigo: (id="click-all-buttons") renomeado ok!-->
+    <audio id="sound-theme" src="./assets/audio/soundtrack/main-theme/main-theme.mp3" preload="auto" loop></audio> <!-- antigo: (id="background-theme-audio"e "theme.mp3") renomeado ok!-->
+  </div>
+  
+  <!-- SCRIPT PRINCIPAL: Comportamento do site -->
+  <script src="./assets/scripts/main.js"></script> <!-- antigo "./src/js/main.js" renomeado ok! -->
+ 
+</body>
+</html>
+
+
+
