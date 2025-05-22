@@ -2,107 +2,107 @@ document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search); 
   const id = parseInt(urlParams.get("id"), 10);
   
-  if (!id || !colossusPagesData[id]) { // antigo: 'colossusData'
+  if (!id || !colossusPagesData[id]) {  
     showNotFound(); 
     return; 
   }
 
-  const colossus = colossusPagesData[id]; // antigo: 'colossusData'
+  const colossus = colossusPagesData[id];  
 
-  const pagesTitle = document.getElementById('pages-title'); // antigo 'id="colossus-title"'' e 'const titleEl'
-  const pagesDescription = document.getElementById('pages-description'); // antigo 'id="colossus-description"' e 'const descEl'
-  const soundTheme = document.getElementById('sound-theme'); // antigo 'id="colossus-audio"' e 'const audioEl'
-  const playButton = document.getElementById('play-button'); // mantido
-  const colossusPages = document.querySelector('.colossus-pages'); // antigo 'class="colossus-page"' e 'const pageEl'
+  const pagesTitle = document.getElementById('pages-title');  
+  const pagesDescription = document.getElementById('pages-description');         
+  const soundTheme = document.getElementById('sound-theme');                     
+  const playButton = document.getElementById('play-button');             
+  const colossusPages = document.querySelector('.colossus-pages');         
 
-  const soundClicks = document.getElementById('sound-clicks'); // antigo 'id="click-sound"' e 'const clickSound'
-  soundClicks.volume = 0.4; // antigo 'clickSound'
-  function playSoundClicks() { // antigo 'playClickSound'
-    soundClicks.currentTime = 0; // antigo 'clickSound'
-    soundClicks.play().catch(err => console.warn('Erro ao tocar som de clique:', err)); // antigo 'clickSound'
+  const soundClicks = document.getElementById('sound-clicks');       
+  soundClicks.volume = 0.4;         
+  function playSoundClicks() {       
+    soundClicks.currentTime = 0;      
+    soundClicks.play().catch(err => console.warn('Erro ao tocar som de clique:', err)); 
   }
 
-  if (pagesTitle) pagesTitle.textContent = colossus.name || "Sem título"; // antigo 'titleEl'
-  if (pagesDescription) pagesDescription.textContent = colossus.description || "Sem descrição disponível."; // antigo 'descEl'
+  if (pagesTitle) pagesTitle.textContent = colossus.name || "Sem título"; 
+  if (pagesDescription) pagesDescription.textContent = colossus.description || "Sem descrição disponível."; 
 
-  if (colossusPages && colossus.image) { // antigo pageEl
-    colossusPages.style.backgroundImage = `url(${colossus.image})`; // antigo pageEl
-    colossusPages.style.backgroundSize = 'cover'; // antigo pageEl
-    colossusPages.style.backgroundPosition = 'center'; // antigo pageEl
-    colossusPages.style.backgroundRepeat = 'no-repeat'; // antigo pageEl
+  if (colossusPages && colossus.image) { 
+    colossusPages.style.backgroundImage = `url(${colossus.image})`; 
+    colossusPages.style.backgroundSize = 'cover'; 
+    colossusPages.style.backgroundPosition = 'center'; 
+    colossusPages.style.backgroundRepeat = 'no-repeat'; 
   }
 
-  if (soundTheme && colossus.audio) { // antigo audioEl
-    soundTheme.src = colossus.audio; // antigo audioEl
-    soundTheme.load(); // antigo audioEl
+  if (soundTheme && colossus.audio) { 
+    soundTheme.src = colossus.audio; 
+    soundTheme.load(); 
   }
 
-  if (playButton && soundTheme) { // antigo audioEl
+  if (playButton && soundTheme) { 
     playButton.addEventListener('click', () => { 
-      playSoundClicks(); // antigo 'playClickSound'
+      playSoundClicks(); 
       setTimeout(() => {
-        soundTheme.currentTime = 0; // antigo audioEl
-        soundTheme.play().catch(err => console.warn('Erro ao tocar o áudio:', err)); // antigo audioEl
+        soundTheme.currentTime = 0; 
+        soundTheme.play().catch(err => console.warn('Erro ao tocar o áudio:', err)); 
       }, 500);
     }); 
   }
 
-  const backButton = document.getElementById('back-button'); // mantido
+  const backButton = document.getElementById('back-button'); 
   if (backButton) { 
     backButton.addEventListener('click', () => { 
-      playSoundClicks(); // antigo playClickSound
+      playSoundClicks(); 
       setTimeout(() => {
         window.location.href = '../../index.html?skipOverlay=true';
       }, 500);
     }); 
   }
-// da linha '1' a '59' foi revisto e renomeado
-  setupNavigation(id); // define a função 'mantido'
-  setupColossoGallery(colossus.galleryImages); // antigo 'setupCarousel' e 'carouselImages'
+
+  setupNavigation(id); 
+  setupColossoGallery(colossus.galleryImages); 
   createImageOverlay();
 
-  function setupNavigation(currentId) {  // mantido
-    const prevButton = document.getElementById('prev-button'); // antigo 'const prevBtn'
-    const nextButton = document.getElementById('next-button');  // antigo 'const nextBtn'
+  function setupNavigation(currentId) {  
+    const prevButton = document.getElementById('prev-button');    
+    const nextButton = document.getElementById('next-button');     
     const maxId = Object.keys(colossusPagesData).length;
 
-    if (prevButton) { // antigo 'prevBtn'
+    if (prevButton) {     
       if (currentId > 1) {
-        prevButton.addEventListener('click', () => { // antigo 'prevBtn'
-          playSoundClicks(); // antigo 'playClickSound'
+        prevButton.addEventListener('click', () => {    
+          playSoundClicks();     
           setTimeout(() => {
             window.location.href = `colossus-pages.html?id=${currentId - 1}`;
           }, 500);
         });
       } else {
-        prevButton.disabled = true; // antigo 'prevBtn'
-        prevButton.style.opacity = 0.5; // antigo 'prevBtn'
-        prevButton.style.cursor = "not-allowed"; // antigo 'prevBtn'
+        prevButton.disabled = true; 
+        prevButton.style.opacity = 0.5; 
+        prevButton.style.cursor = "not-allowed"; 
       }
     }
 
-    if (nextButton) { // antigo 'nextBtn'
+    if (nextButton) {  
       if (currentId < maxId) {
-        nextButton.addEventListener('click', () => { // antigo 'nextBtn'
-          playSoundClicks(); // playClickSound
+        nextButton.addEventListener('click', () => { 
+          playSoundClicks();  
           setTimeout(() => {
             window.location.href = `colossus-pages.html?id=${currentId + 1}`;
           }, 500);
         });
       } else {
-        nextButton.disabled = true; // antigo 'nextBtn'
-        nextButton.style.opacity = 0.5; // antigo 'nextBtn'
-        nextButton.style.cursor = "not-allowed"; // antigo 'nextBtn'
+        nextButton.disabled = true;     
+        nextButton.style.opacity = 0.5;       
+        nextButton.style.cursor = "not-allowed";    
       }
     }
   }
 
-  function setupColossoGallery(images) { // antigo 'setupCarousel'
-    const colossoThumbnail = document.getElementById('colosso-thumbnail'); // antigo 'const carouselTrack' e 'carousel-track'
+  function setupColossoGallery(images) {     
+    const colossoThumbnail = document.getElementById('colosso-thumbnail');      
     const prevCarousel = document.querySelector('.prev-carousel'); 
     const nextCarousel = document.querySelector('.next-carousel');
 
-    if (!colossoThumbnail || !Array.isArray(images)) return; // antigo 'carouselTrack'
+    if (!colossoThumbnail || !Array.isArray(images)) return;  
 
     images.forEach((imgSrc, index) => {
       const li = document.createElement('li');
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       wrapper.appendChild(img);
       li.appendChild(wrapper);
-      colossoThumbnail.appendChild(li); // antigo 'carouselTrack'
+      colossoThumbnail.appendChild(li);    
     });
 
     let scrollAmount = 320;
