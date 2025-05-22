@@ -34,7 +34,7 @@ html, body {
 }
 
 /* PÁGINA COLOSSUS */
-.colossus-pages { /* antigo ".colossus-page" renomeado ok! */
+.colossus-pages {          
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -48,7 +48,7 @@ html, body {
   z-index: 0;
 }
 
-.colossus-pages::before { /* antigo ".colossus-page" renomeado ok! */
+.colossus-pages::before {       
   content: '';
   position: absolute;
   inset: 0;
@@ -57,7 +57,7 @@ html, body {
   z-index: -2;
 }
 
-.colossus-pages::after { /* antigo ".colossus-page" renomeado ok! */
+.colossus-pages::after {  
   content: '';
   position: absolute;
   inset: 0;
@@ -66,12 +66,12 @@ html, body {
 }
 
 /* TÍTULOS */
-#pages-title { /* antigo "#colossus-title" renomeado ok! */
+#pages-title {       
   font-size: var(--title-font-size);
   text-shadow: 1px 1px 3px rgba(17, 26, 22, 0.7);
 }
 
-#pages-description { /* antigo "#colossus-description" renomeado ok! */
+#pages-description {        
   font-size: var(--description-font-size);
   line-height: 1.2;
   height: 200px;
@@ -102,16 +102,16 @@ html, body {
 }
 
 /* CARROSSEL */
-.colosso-gallery { /* antigo ".carousel-container" renomeado ok!*/
+.colosso-gallery {       
   width: 100%;
   padding: var(--carousel-padding);
   display: flex;
   justify-content: center;
-  margin-top: auto; /* posiciona mais abaixo da tela */
-  margin-bottom: 2rem; /* aproxima dos botões */
+  margin-top: auto;         
+  margin-bottom: 2rem;       
 }
 
-.colosso-gallery-track { /* (antigo ".carousel-track-container" renomeado ok! */
+.colosso-gallery-track {  
   width: 90%;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -123,7 +123,7 @@ html, body {
   -webkit-mask-image: var(--carousel-mask);
 }
 
-.colosso-thumbnail { /* antigo ".carousel-track"' renomeado ok! */
+.colosso-thumbnail {  
   display: flex;
   gap: var(--carousel-gap);
   list-style: none;
@@ -141,44 +141,44 @@ html, body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.image-wrapper img { /* Usado no carrossel criado dinamicamente via Colossus.js */
+.image-wrapper img {  
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: var(--image-border-radius);
 }
 
-.image-wrapper:hover {  /* Usado no carrossel criado dinamicamente via Colossus.js */
+.image-wrapper:hover {   
   transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
-.image-wrapper:hover img { /* Usado no carrossel criado dinamicamente via Colossus.js */
+.image-wrapper:hover img {     
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 /* SCROLLBAR PERSONALIZADA */
-.colosso-gallery-track::-webkit-scrollbar { /* (antigo ".carousel-track-container" renomeado ok! */
+.colosso-gallery-track::-webkit-scrollbar {  
   height: 8px;
 }
 
-.colosso-gallery-track::-webkit-scrollbar-track { /* (antigo ".carousel-track-container" renomeado ok! */
+.colosso-gallery-track::-webkit-scrollbar-track {  
   background: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
 
-.colosso-gallery-track::-webkit-scrollbar-thumb { /* (antigo ".carousel-track-container" renomeado ok! */
+.colosso-gallery-track::-webkit-scrollbar-thumb {             
   background: var(--scrollbar-color);
   border-radius: 10px;
   border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-.colosso-gallery-track::-webkit-scrollbar-thumb:hover { /* (antigo ".carousel-track-container" renomeado ok! */
+.colosso-gallery-track::-webkit-scrollbar-thumb:hover {   
   background: rgba(168, 143, 90, 0.9);
 }
 
 /* BOTÕES FIXOS NO RODAPÉ */
-.main-menu { /*antigo ".buttons-container" renomeado ok! */
+.main-menu { 
   position: fixed;
   bottom: 30px;
   width: 100%;
@@ -189,12 +189,12 @@ html, body {
   z-index: 10;
 }
 
-.main-buttons { /* antigo 'class="nav-buttons"' renomeado ok! */
+.main-buttons {      
   display: flex;
   gap: 1rem;
 }
 
-.main-buttons button, /* antigo 'class="nav-buttons"' renomeado ok! */
+.main-buttons button, 
 #play-button {
   background: var(--button-bg);
   color: var(--text-color);
@@ -208,14 +208,14 @@ html, body {
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.main-buttons button:hover, /* antigo 'class="nav-buttons"' renomeado ok! */
+.main-buttons button:hover,  
 #play-button:hover {
   background: var(--hover-bg);
   transform: scale(1.05);
 }
 
 /* AMPLIAÇÃO DE IMAGEM */
-.image-overlay { /* Usado no carrossel criado dinamicamente via Colossus.js */
+.image-overlay {            
   position: fixed;
   top: 0;
   left: 0;
@@ -231,12 +231,12 @@ html, body {
   transition: opacity 0.3s ease;
 }
 
-.image-overlay.active { /* Usado no carrossel criado dinamicamente via Colossus.js */
+.image-overlay.active {        
   visibility: visible;
   opacity: 1;
 }
 
-.image-overlay img { /* Usado no carrossel criado dinamicamente via Colossus.js */
+.image-overlay img { 
   max-width: 85vw;
   max-height: 85vh;
   border-radius: var(--image-border-radius);
@@ -246,11 +246,11 @@ html, body {
   transition: transform 0.3s ease;
 }
 
-.image-overlay img:hover { /* Usado no carrossel criado dinamicamente via Colossus.js */
+.image-overlay img:hover {     
   transform: scale(1.02);
 }
 
-.image-overlay::after { /* Usado no carrossel criado dinamicamente via Colossus.js */
+.image-overlay::after {          
   content: 'Clique para fechar';
   position: absolute;
   bottom: 20px;
