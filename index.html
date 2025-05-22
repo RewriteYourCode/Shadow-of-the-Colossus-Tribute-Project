@@ -19,23 +19,23 @@
   <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet"> 
   
   <!-- Estilos CSS (Reset + Principal -->
-  <link rel="stylesheet" href="./assets/styles/reset.css"> <!-- antigo: "./src/css/reset.css" renomeado ok!-->
-  <link rel="stylesheet" href="./assets/styles/style.css"> <!-- antigo: "./src/css/style.css" renomeado ok!-->
-  <link rel="stylesheet" href="./assets/styles/responsive.css"> <!-- antigo: "./src/css/responsive" renomeado ok!-->
+  <link rel="stylesheet" href="./assets/styles/reset.css">
+  <link rel="stylesheet" href="./assets/styles/style.css">     
+  <link rel="stylesheet" href="./assets/styles/responsive.css">      
   
 </head>
 
 <body> 
   <!-- INTRODUÇÃO: Tela inicial com botão de entrada -->
-  <div id="intro-screen" class="fade-transition"> <!-- antigo: (id="intro-screen" class="transition-fade") renomeado ok! -->
+  <div id="intro-screen" class="fade-transition"> 
     <h1>Shadow of the Colossus</h1> 
     <h2>TRIBUTE PROJECT</h2>
-    <button id="enter-button" data-label="Entrar no site">ENTRAR</button> <!-- antigo: ("id="intro-enter-button") renomeado ok -->
-    <p class="intro-credits">© 2025 Tribute Project. All rights reserved. Developed by RewriteYourCode™.</p> <!-- antigo: (class="intro-footer") renomeado ok -->
+    <button id="enter-button" data-label="Entrar no site">ENTRAR</button> 
+    <p class="intro-credits">© 2025 Tribute Project. All rights reserved. Developed by RewriteYourCode™.</p>  
   </div>
   
   <!-- CONTEÚDO PRINCIPAL: Menu e navegação do site -->
-  <main id="main-content" class="visually-hidden fade-transition"> <!-- antigo: ("visually-hidden transition-fade") renomeado ok! -->
+  <main id="main-content" class="visually-hidden fade-transition">
     <header> 
       <h1>Shadow of the Colossus</h1>
       <h2>TRIBUTE PROJECT</h2>
@@ -43,10 +43,8 @@
     
     <!-- CARROSSEL DE IMAGENS: Galeria dos 16 colossos -->
     <section class="colossus-gallery">
-      <div class="colossus-gallery-track"> <!-- antigo: (class="gallery-track") -->
-        <!-- As imagens são organizadas em divs com "data-colossus-id" para facilitar scripts -->
+      <div class="colossus-gallery-track">
         
-        <!-- antigo: (class="colossus-image-container" e "data-colossus" e src="./src/images/colossus/1valus1.jpg") renomeado ok!-->
         <div class="colossus-thumbnail" data-colossus-id="1"><img src="./assets/images/colossus-main-gallery/colosso-01-valus.jpg" alt="Colossus 1 - Valus" loading="lazy"></div>
         <div class="colossus-thumbnail" data-colossus-id="2"><img src="./assets/images/colossus-main-gallery/colosso-02-quadratus.jpg" alt="Colossus 2 - Quadratus" loading="lazy"></div>
         <div class="colossus-thumbnail" data-colossus-id="3"><img src="./assets/images/colossus-main-gallery/colosso-03-gaius.jpg" alt="Colossus 3 - Gaius" loading="lazy"></div>
@@ -67,7 +65,7 @@
     </section>
     
     <!-- NAVEGAÇÃO PRINCIPAL: Botões de acesso às pàginas internas -->
-    <nav class="main-menu"> <!-- antigo: (class="navigation-buttons" e "data=href")renomeado ok! -->
+    <nav class="main-menu">
       <button data-target-url="extra-pages.html?id=1" aria-label="The Last Guardian">THE LAST GUARDIAN</button>
       <button data-target-url="extra-pages.html?id=2" aria-label="ICO">ICO</button>
       <button data-target-url="extra-pages.html?id=3" aria-label="Fumito Ueda">FUMITO UEDA</button>
@@ -78,15 +76,14 @@
   </main>
   
   <!-- CONTROLE DE ÀUDIO: Sons de interação e música de fundo -->
-  <!-- antigo: "./src/audio" renomeado ok! -->
-  <div id="audio-controller" class="visually-hidden"> <!-- antigo: (id="audio-controls") renomeado ok! -->
-    <audio id="sound-enter" src="./assets/audio/ui/click-enter-button.mp3" preload="auto"></audio> <!-- antigo: (id="enter-button-sound") renomeado ok!-->
-    <audio id="sound-clicks" src="./assets/audio/ui/click-all-buttons.mp3" preload="auto"></audio> <!-- antigo: (id="click-all-buttons") renomeado ok!-->
-    <audio id="sound-theme" src="./assets/audio/soundtrack/main-theme/main-theme.mp3" preload="auto" loop></audio> <!-- antigo: (id="background-theme-audio"e "theme.mp3") renomeado ok!-->
+  <div id="audio-controller" class="visually-hidden"> 
+    <audio id="sound-enter" src="./assets/audio/ui/click-enter-button.mp3" preload="auto"></audio> 
+    <audio id="sound-clicks" src="./assets/audio/ui/click-all-buttons.mp3" preload="auto"></audio> 
+    <audio id="sound-theme" src="./assets/audio/soundtrack/main-theme/main-theme.mp3" preload="auto" loop></audio> 
   </div>
   
   <!-- SCRIPT PRINCIPAL: Comportamento do site -->
-  <script src="./assets/scripts/main.js"></script> <!-- antigo "./src/js/main.js" renomeado ok! -->
+  <script src="./assets/scripts/main.js"></script>
  
 </body>
 </html>
