@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Elementos principais
   const introScreen = document.getElementById('intro-screen'); 
   const mainContent = document.getElementById('main-content'); 
-  const enterButton = document.getElementById('enter-button'); // antigo 'intro-enter-button' renomeado ok!
-  const soundClicks = document.getElementById('sound-clicks'); // antigo: 'click-all-buttons renomeado ok!
-  const soundTheme = document.getElementById('sound-theme'); // antigo 'background-theme-audio' renomeado ok!
-  const soundEnter = document.getElementById('sound-enter'); // antigo 'enter-button-sound' renomeado ok!
+  const enterButton = document.getElementById('enter-button');      
+  const soundClicks = document.getElementById('sound-clicks');        
+  const soundTheme = document.getElementById('sound-theme');        
+  const soundEnter = document.getElementById('sound-enter');        
 
   // Configuração de volume
   const clickVolume = 0.5;
@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Função que inicializa os eventos do conteúdo principal
   const initMainContent = () => {
     // Clique nas imagens dos colossos
-    document.querySelectorAll('.colossus-thumbnail[data-colossus-id]').forEach(img => { // antigo: 'colossus-image-container' e 'data-colossus'
+    document.querySelectorAll('.colossus-thumbnail[data-colossus-id]').forEach(img => {        
       img.addEventListener('click', () => {
-        playSound(soundClicks, clickVolume); // antigo 'clickAllButtonsSound'
+        playSound(soundClicks, clickVolume);           
         const id = img.dataset.colossusId;
         if (id) {
           setTimeout(() => {
@@ -39,10 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Clique nos botões de navegação
-    document.querySelectorAll('.main-menu button').forEach(button => { // antigo '.navigation-buttons button'
+    document.querySelectorAll('.main-menu button').forEach(button => {      
       button.addEventListener('click', () => {
-        playSound(soundClicks, clickVolume); // antigo 'clickAllButtonsSound'
-        const target = button.getAttribute('data-target-url'); // antigo 'data-href'
+        playSound(soundClicks, clickVolume);         
+        const target = button.getAttribute('data-target-url');         
         if (target) {
           setTimeout(() => {
             window.location.href = target;
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Transição da introdução para o conteúdo principal
   const fadeOutIntroScreen = () => {
-    introScreen.classList.add('fade-out-transition'); // antigo 'transition-fade-out'
+    introScreen.classList.add('fade-out-transition');       
     setTimeout(() => {
       introScreen.style.display = 'none';
       mainContent.classList.add('show');
@@ -63,8 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Quando o botão "Entrar" for clicado
   const handleIntro = () => {
-    playSound(soundEnter, clickVolume); // antigo 'enterButtonSound'
-    playSound(soundTheme, themeVolume); // antigo 'backgroundThemeAudio'
+    playSound(soundEnter, clickVolume);       
+    playSound(soundTheme, themeVolume);       
     fadeOutIntroScreen();
     initMainContent();
   };
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     history.replaceState(null, null, window.location.pathname);
     fadeOutIntroScreen();
     setTimeout(() => {
-      playSound(soundTheme, themeVolume); // backgroundThemeAudio
+      playSound(soundTheme, themeVolume);       
       initMainContent();
     }, 1000);
     return;
