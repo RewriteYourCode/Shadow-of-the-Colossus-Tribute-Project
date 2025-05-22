@@ -15,30 +15,30 @@
 </head>
 
 <body>
-  <main class="colossus-pages"> <!-- antigo 'class="colossus-page"' renomeado ok! -->
+  <main class="colossus-pages">      
 
     <!-- Botão de Voltar -->
     <button id="back-button" class="back-button">Voltar</button>
 
     <!-- Título do Colossus -->
-    <h1 id="pages-title" class="title">Colossus</h1> <!-- antigo 'id="colossus-title"' renomeado ok! -->
+    <h1 id="pages-title" class="title">Colossus</h1> 
 
     <!-- Descrição do Colossus -->
-    <p id="pages-description" class="description">Carregando descrição...</p> <!-- antigo 'id="colossus-description"' renomeado ok! -->
+    <p id="pages-description" class="description">Carregando descrição...</p> 
 
     <!-- Carrossel de imagens (será preenchido via JS) -->
-    <section class="colosso-gallery"> <!-- antigo 'class="carousel-container"' renomeado ok! -->
-      <div class="colosso-gallery-track">  <!-- antigo 'class="carousel-track-container"' renomeado ok! -->
-        <div id="colosso-thumbnail" class="colosso-thumbnail"></div> <!-- antigo 'class="carousel-track"' renomeado ok! -->
+    <section class="colosso-gallery">       
+      <div class="colosso-gallery-track">       
+        <div id="colosso-thumbnail" class="colosso-thumbnail"></div>       
       </div>
     </section>
 
     <!-- Botões de Navegação -->
-    <section class="main-menu"> <!-- antigo 'class="buttons-container"' renomeado ok! -->
-      <div class="main-buttons"> <!-- antigo 'class="nav-buttons"' renomeado ok! -->
-        <button id="prev-button" class="prev-button">Anterior</button> <!-- antigo 'class="nav-btn"' renomeado ok! -->
-        <button id="play-button" class="play-button">Play</button> <!-- antigo 'class="play-btn"' renomeado ok! -->
-        <button id="next-button" class="next-button">Próximo</button> <!-- antigo 'class="nav-btn"' renomeado ok! -->
+    <section class="main-menu">       
+      <div class="main-buttons">      
+        <button id="prev-button" class="prev-button">Anterior</button>      
+        <button id="play-button" class="play-button">Play</button>        
+        <button id="next-button" class="next-button">Próximo</button>     
       </div>
       
     </section>
@@ -46,12 +46,11 @@
   </main>
 
   <!-- Áudio do Colossus -->
-  <audio id="sound-theme" preload="auto"> <!-- antigo 'id="colossus-audio"' renomeado ok! -->
+  <audio id="sound-theme" preload="auto">      
     Seu navegador não suporta o elemento de áudio.
   </audio>
   
-  <audio id="sound-clicks" src="./assets/audio/ui/click-all-buttons.mp3" preload="auto"></audio> <!-- antigo 'id="click-sound"' renomeado ok! -->
-
+  <audio id="sound-clicks" src="./assets/audio/ui/click-all-buttons.mp3" preload="auto"></audio>  
   <!-- Scripts -->
   <script src="./assets/scripts/colossus-pages-data.js" defer></script>
   <script src="./assets/scripts/colossus-pages.js" defer></script>
